@@ -1,0 +1,195 @@
+/******************************************************************************
+ * ROFI Color theme
+ * User: Rasi
+ * Copyright: Rasmus Steinke
+ ******************************************************************************/
+configuration {
+    font: "JetBrains Mono 11";  /* Hier stellst du die Schriftart ein */
+}
+
+* {
+    selected-normal-foreground:      rgb(255, 255, 255);
+    foreground:                      rgb(255, 255, 255);
+    normal-foreground:               @foreground;
+    alternate-normal-background:     rgb(0, 0, 0); /* Schwarz */
+    red:                             rgb(220, 50, 47);
+    selected-urgent-foreground:      rgb(255, 255, 255);
+    blue:                            rgb(38, 139, 210);
+    urgent-foreground:               rgb(255, 255, 255);
+    alternate-urgent-background:     rgb(0, 0, 0); /* Schwarz */
+    active-foreground:               rgb(255, 255, 255);
+    lightbg:                         rgb(255, 255, 255);
+    selected-active-foreground:      rgb(255, 255, 255);
+    alternate-active-background:     rgb(0, 0, 0); /* Schwarz */
+    background:                      rgb(0, 0, 0); /* Schwarz */
+    bordercolor:                     rgb(255, 255, 255); /* Weiße Umrandung */
+    alternate-normal-foreground:     @foreground;
+    normal-background:               rgb(0, 0, 0); /* Schwarz */
+    lightfg:                         rgb(255, 255, 255);
+    selected-normal-background:      rgb(0, 0, 0); /* Schwarz */
+    border-color:                    @foreground;
+    spacing:                         2;
+    separatorcolor:                  rgb(255, 255, 255); /* Weiße Trennlinie */
+    urgent-background:               rgb(0, 0, 0); /* Schwarz */
+    selected-urgent-background:      rgb(0, 0, 0); /* Schwarz */
+    alternate-urgent-foreground:     @urgent-foreground;
+    background-color:                rgb(0, 0, 0); /* Kein Transparenz */
+    alternate-active-foreground:     @active-foreground;
+    active-background:               rgb(0, 0, 0); /* Schwarz */
+    selected-active-background:      rgb(0, 0, 0); /* Schwarz */
+}
+
+window {
+    background-color: @background;
+    border:           1px solid;
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+    padding:          5;
+}
+
+mainbox {
+    border:           0;
+    padding:          0;
+}
+
+message {
+    border:           1px solid;
+    border-color:     @separatorcolor; /* Weiße Trennlinie */
+    padding:          1px;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    fixed-height: 0;
+    border:         none; /* Keine Umrandung für die Suchergebnisse */
+    spacing:        2px;
+    scrollbar:      true;
+    padding:        12px;
+}
+
+element {
+    border:         0; /* Keine Umrandung für normale Elemente */
+    padding:        1px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border:           1px solid;  /* Umrandung nur für das ausgewählte Element */
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border:           1px solid;  /* Umrandung nur für das ausgewählte Element */
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border:           1px solid;  /* Umrandung nur für das ausgewählte Element */
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:           3px;
+    border:          0;
+    border-radius:   5px;          /* Abgerundete Ecken für die Scrollbar */
+    background-color: rgb(0, 0, 0); /* Hintergrundfarbe der Scrollbar */
+    handle-width:    6px;
+    handle-color:    rgb(255, 255, 255); /* Weiße Hand (Scrollbar Schieber) */
+    padding:         0;
+}
+
+mode-switcher {
+    border:           1px solid;
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border:           1px solid;  /* Umrandung nur für das ausgewählte Element */
+    border-color:     rgb(255, 255, 255); /* Weiße Umrandung */
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    12px;
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+inputbar {
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em;
+    text-color: @normal-foreground;
+}
+
+scrollbar {
+    width:           3px;                      /* Sehr dünn */
+    background-color: rgba(0, 0, 0, 0);    /* Fast unsichtbarer Hintergrund */
+    border-radius:   0px;                      /* Abgerundete Ecken */
+    handle-width:    1px;                      /* Dünnerer Schieber */
+    handle-color:    rgba(255, 255, 255, 1); /* Leicht durchsichtiger Schieber */
+    padding:         0;
+}
+

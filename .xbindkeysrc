@@ -1,0 +1,23 @@
+# Use XF86AudioMute to mute volume
+"${HOME}/.config/scripts/volume.sh mute"
+   XF86AudioMute
+
+# Use XF86AudioRaiseVolume to raise volume
+"${HOME}/.config/scripts/volume.sh raise"
+   XF86AudioRaiseVolume
+
+# Use XF86AudioLowerVolume to lower volume
+"${HOME}/.config/scripts/volume.sh lower"
+   XF86AudioLowerVolume
+"brillo -q -A 5"
+   XF86MonBrightnessUp
+"brillo -q -U 5"
+   XF86MonBrightnessDown
+"st -e nmtui"
+   XF86RFKill
+"xrandr --output eDP-1 --off --output HDMI-1 --auto"
+   m:0x0 + c:160
+"xrandr --output HDMI-1 --off --output eDP-1 --auto"
+   m:0x40 + c:33
+"sh ~/.config/polybar/launch2.sh"
+   m:0x0 + c:223
